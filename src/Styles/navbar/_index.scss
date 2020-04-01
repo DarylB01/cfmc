@@ -1,0 +1,29 @@
+.nav__container {
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	.nav {
+		width: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 80px;
+		margin: 0 auto;
+		color: rgb(1, 41, 53);
+		font-size: 18px;
+		img {
+			height: 100%
+		}
+		.links {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			li {
+				margin-left: 30px;
+			}
+		}
+	}
+}

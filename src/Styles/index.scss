@@ -1,0 +1,17 @@
+@import "./navbar/index";
+@import "./home/index";
+@import "./home/eventlist";
+@import "./footer/index";
+* {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  font-family: "Sen", sans-serif;
+}Í
+
+#root {
+  width: 100vw;
+  overflow: hidden;
+}
