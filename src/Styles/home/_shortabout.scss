@@ -1,0 +1,59 @@
+.shortabout {
+	width: 100%;
+	padding: 100px 0;
+	position: relative;
+	height: 100%;
+	.bg {
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -2;
+		top: 0;
+		left: 0;
+	}
+	.filter {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		background-color: $d-blue;
+		opacity: 0.85;
+	}
+}
+.shortabout__content {
+	width: 80%;
+	margin: 0 auto;
+	z-index: 9999999;
+	color: white;
+	h2 {
+		font-size: 35px;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	p {
+		font-size: 18px;
+		line-height: 28px;
+		letter-spacing: 0.5px;
+	}
+	a {
+		display: inline-block;
+		color: white;
+		margin-top: 20px;
+		font-size: 20px;
+		border: 1px solid white;
+		padding: 5px 10px;
+		border-radius: 10px;
+		transition: 0.25s;
+		&:hover {
+			margin-left: 20px;
+			border-color: transparent;
+			&::before {
+				content: "→ ";
+			}
+		}
+	}
+}

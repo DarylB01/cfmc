@@ -8,7 +8,7 @@ const Live = () => {
 			<section className="live__content">
 				<section className="text">
 					<img alt="video camera" src={liveIcon} />
-					<h3>Join us on Facebook Live!</h3>
+					<h2>Join us on Facebook Live!</h2>
 					<p>
 						Tempor elit ut ex aute cupidatat consectetur cupidatat elit do. Esse consequat pariatur magna ut
 						enim amet. Id in irure magna esse culpa mollit excepteur magna. Ex consectetur in ex veniam
@@ -20,7 +20,7 @@ const Live = () => {
 						est cupidatat in irure est ut ex enim anim velit reprehenderit ad. Deserunt laboris elit velit
 						cupidatat laborum magna commodo enim enim sit eu aliqua consectetur.
 					</p>
-                    <a href="">  - Join us LIVE</a>
+                    <a href="">  Join us LIVE</a>
 				</section>
 				<section className="img">
 					<img src={liveImg} />

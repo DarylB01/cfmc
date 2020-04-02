@@ -15,20 +15,24 @@ const index = () => {
 	}
 	return (
 		<section className="events">
-			<header className="events__header">UPCOMING EVENTS</header>
-			<section className="events__list">
-				{eventsArray.map((item, index) => {
-					return (
-						<li className="event" key={index} style={{ backgroundImage: `url(${fillerImg})` }}>
-							<img className="filter" />
-							<div>
-								<h4 className="event__title">{item.title}</h4>
-								<h6 className="event__date">{item.date}</h6>
-								<p className="event__desc">{item.desc}</p>
-							</div>
-						</li>
-					);
-				})}
+			<section className="events__content">
+				<h2 className="events__header">UPCOMING EVENTS</h2>
+				<section className="events__list">
+					{eventsArray.map((item, index) => {
+						return (
+							<li className="event" key={index} style={{ backgroundImage: `url(${fillerImg})` }}>
+								<img className="filter" />
+								<div className="text">
+									<h4 className="event__title">{item.title}</h4>
+									<h6 className="event__date">{item.date}</h6>
+									<p className="event__desc">{item.desc}</p>
+									<a href="">Read More</a>
+								</div>
+							</li>	
+						);
+					})}
+				</section>
+				<a href="">See more</a>
 			</section>
 		</section>
 	);

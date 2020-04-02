@@ -1,17 +1,23 @@
+@import "./variables";
 @import "./navbar/index";
 @import "./home/index";
-@import "./home/eventlist";
 @import "./footer/index";
 * {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  text-decoration: none;
-  outline: none;
-  font-family: "Sen", sans-serif;
-}Í
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	text-decoration: none;
+	outline: none;
+	font-family: 'Roboto', sans-serif;
+}
 
-#root {
-  width: 100vw;
-  overflow: hidden;
+html {
+  overflow-y: scroll;
+}
+h2 {
+  font-weight: bold;
+}
+ #root {
+	width: 100vw;
+	overflow-x: hidden;
 }

@@ -5,6 +5,7 @@ import churchImg from '../../Images/Home/church-bg.jpg';
 import ImgGallery from './ImgGallery';
 import EventList from './EventList';
 import Live from './Live';
+import ShortAbout from './ShortAbout';
 const index = () => {
 	return (
 		<React.Fragment>
@@ -24,6 +25,7 @@ const index = () => {
 				</section>
 			</main>
 			<Live />
+			<ShortAbout />
 			<EventList />
 		</React.Fragment>
 	);
