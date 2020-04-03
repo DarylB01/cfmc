@@ -1,0 +1,16 @@
+@import "./list";
+
+.allevents__content {
+	text-align: center;
+	h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+	}
+	p {
+		font-size: 20px;
+    }
+    a{
+        color: $l-blue;
+        border-color: $l-blue;
+    }
+}

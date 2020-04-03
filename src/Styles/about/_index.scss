@@ -1,0 +1,17 @@
+@import "./item";
+
+.about__content {
+	width: 100%;
+	margin: 150px 0px;
+	:nth-child(even) {
+        flex-direction: row-reverse;
+        .picture {
+            margin-left: -40px;
+            margin-right: 0px;;
+        }
+        .text {
+            background-color: $l-gray;;
+        }
+    }
+
+}

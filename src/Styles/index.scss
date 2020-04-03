@@ -1,7 +1,11 @@
 @import "./variables";
+@import "./banners/index";
 @import "./navbar/index";
 @import "./home/index";
 @import "./footer/index";
+@import "./about/index";
+@import "./allevents/index";
+
 * {
 	margin: 0;
 	list-style: none;
@@ -10,14 +14,36 @@
 	outline: none;
 	font-family: 'Roboto', sans-serif;
 }
-
+.content {
+	width: 80%;
+	max-width: 1200px;
+	padding: 100px 0;
+	margin: 0 auto;
+}
+.button-link {
+	display: inline-block;
+	margin-top: 20px;
+	font-size: 20px;
+	border: 1px solid;
+	padding: 5px 10px;
+	border-radius: 10px;
+	transition: 0.25s;
+	&:hover {
+		letter-spacing: 0.5px;
+		margin-left: 20px;
+		border-color: transparent;
+		&::before {
+			content: "→ ";
+		}
+	}
+}
 html {
-  overflow-y: scroll;
+	overflow-y: scroll;
 }
 h2 {
-  font-weight: bold;
+	font-weight: bold;
 }
- #root {
+#root {
 	width: 100vw;
 	overflow-x: hidden;
 }

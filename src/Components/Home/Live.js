@@ -20,7 +20,9 @@ const Live = () => {
 						est cupidatat in irure est ut ex enim anim velit reprehenderit ad. Deserunt laboris elit velit
 						cupidatat laborum magna commodo enim enim sit eu aliqua consectetur.
 					</p>
-                    <a href="">  Join us LIVE</a>
+					<a className="button-link" href="">
+						Join us LIVE
+					</a>
 				</section>
 				<section className="img">
 					<img src={liveImg} />

@@ -20,7 +20,9 @@ const ShortAbout = () => {
 					exercitation amet exercitation sint sint voluptate esse. Incididunt culpa aliqua Lorem officia et
 					id. Consectetur minim ex excepteur velit in do aliqua duis aliquip exercitation.
 				</p>
-				<a href="">Learn More</a>
+				<a className="button-link" href="">
+					Learn More
+				</a>
 			</section>
 			<section className="bg" style={{ backgroundImage: `url(${aboutBg})` }} />
 			<section className="filter" />

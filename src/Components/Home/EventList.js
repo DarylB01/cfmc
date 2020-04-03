@@ -26,13 +26,17 @@ const index = () => {
 									<h4 className="event__title">{item.title}</h4>
 									<h6 className="event__date">{item.date}</h6>
 									<p className="event__desc">{item.desc}</p>
-									<a href="">Read More</a>
+									<a className="button-link" href="">
+										Read More
+									</a>
 								</div>
-							</li>	
+							</li>
 						);
 					})}
 				</section>
-				<a href="">See more</a>
+				<a className="button-link" href="">
+					See more
+				</a>
 			</section>
 		</section>
 	);
