@@ -1,9 +1,8 @@
 .allevents__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 50px;
 }
 
-.list__card {
-    width: 24%;
-    height: 300px;
-}

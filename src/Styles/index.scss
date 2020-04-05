@@ -5,45 +5,49 @@
 @import "./footer/index";
 @import "./about/index";
 @import "./allevents/index";
+@import "./eventcard/index";
+@import "./live/index";
 
 * {
-	margin: 0;
-	list-style: none;
-	padding: 0;
-	text-decoration: none;
-	outline: none;
-	font-family: 'Roboto', sans-serif;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  transition: 0.25s;
 }
 .content {
-	width: 80%;
-	max-width: 1200px;
-	padding: 100px 0;
-	margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  padding: 100px 0;
+  margin: 0 auto;
 }
 .button-link {
-	display: inline-block;
-	margin-top: 20px;
-	font-size: 20px;
-	border: 1px solid;
-	padding: 5px 10px;
-	border-radius: 10px;
-	transition: 0.25s;
-	&:hover {
-		letter-spacing: 0.5px;
-		margin-left: 20px;
-		border-color: transparent;
-		&::before {
-			content: "→ ";
-		}
-	}
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: 0.25s;
+  &:hover {
+    letter-spacing: 0.5px;
+    margin-left: 20px;
+    border-color: transparent;
+    &::before {
+      content: "→ ";
+    }
+  }
 }
 html {
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
 h2 {
-	font-weight: bold;
+  font-weight: bold;
 }
-#root {
-	width: 100vw;
-	overflow-x: hidden;
+#root,
+body {
+  width: 99vw;
+  overflow-x: hidden;
 }

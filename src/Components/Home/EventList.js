@@ -1,45 +1,40 @@
-import React from 'react';
+import React from "react";
 //images
-import fillerImg from '../../Images/Events/fillerEventImg.jpg';
+import fillerImg from "../../Images/Events/fillerEventImg.jpg";
+//components
+import EventCard from "../EventCard";
 
 const index = () => {
-	const eventsArray = [];
+  const eventsArray = [];
 
-	for (let i = 0; i < 4; i++) {
-		eventsArray.push({
-			title: 'Lorem ipsum dolor',
-			date: 'Jan 01, 2020',
-			desc:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam malesuada ipsum in nisl placerat eleifend.'
-		});
-	}
-	return (
-		<section className="events">
-			<section className="events__content">
-				<h2 className="events__header">UPCOMING EVENTS</h2>
-				<section className="events__list">
-					{eventsArray.map((item, index) => {
-						return (
-							<li className="event" key={index} style={{ backgroundImage: `url(${fillerImg})` }}>
-								<img className="filter" />
-								<div className="text">
-									<h4 className="event__title">{item.title}</h4>
-									<h6 className="event__date">{item.date}</h6>
-									<p className="event__desc">{item.desc}</p>
-									<a className="button-link" href="">
-										Read More
-									</a>
-								</div>
-							</li>
-						);
-					})}
-				</section>
-				<a className="button-link" href="">
-					See more
-				</a>
-			</section>
-		</section>
-	);
+  for (let i = 0; i < 4; i++) {
+    eventsArray.push({
+      title: "Lorem ipsum dolor",
+      date: "Jan 01, 2020",
+      previewImg: fillerImg,
+      desc: "Lorem ipsum dolor sit amet.",
+      redirect: (
+        <a href="" className="button-link">
+          Read More
+        </a>
+      ),
+    });
+  }
+  return (
+    <section className="events">
+      <section className="events__content">
+        <h2 className="events__header">UPCOMING EVENTS</h2>
+        <section className="events__list">
+          {eventsArray.map((item, index) => {
+            return <EventCard key={`even${index}`} {...item} />;
+          })}
+        </section>
+        <a className="button-link" href="">
+          See more
+        </a>
+      </section>
+    </section>
+  );
 };
 
 export default index;
