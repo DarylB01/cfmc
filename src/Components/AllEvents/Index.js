@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 //Components
 import Banner from "../Banners/Banner1";
 import List from "./List";
 //Images
 import bannerImg from "../../Images/Events/banner-img.jpg";
 
-const Index = () => {
+const Index = (props) => {
+  useEffect(() => {
+    props.setActivePage("EVENTS");
+  }, []);
   return (
     <main className="allevents">
       <Banner

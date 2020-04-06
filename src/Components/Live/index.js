@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 //images
 import bgImg from "../../Images/Live/live-bg.jpg";
 //components
@@ -6,7 +6,10 @@ import Banner from "../Banners/Banner1";
 import Summary from "./Summary";
 import { VideoCollection } from "./VideoCollection";
 
-const index = () => {
+const Index = (props) => {
+  useEffect(() => {
+    props.setActivePage("LIVE");
+  }, []);
   return (
     <main className="live">
       <Banner
@@ -30,4 +33,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

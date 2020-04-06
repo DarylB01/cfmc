@@ -22,7 +22,7 @@ export const VideoCollection = () => {
   }
   return (
     <section className="live__collection">
-      <h2 className="collection__title">Commodo proident id.</h2>
+      <h2 className="collection__title">Our Video Collection</h2>
       <h4 className="collection__subhead">
         Et et excepteur velit dolor laborum fugiat.
       </h4>

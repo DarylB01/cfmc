@@ -42,20 +42,13 @@ const VideoFB = () => {
       <div
         className="fb-page"
         data-href="https://www.facebook.com/cfmcyyc/"
-        data-width=""
-        data-height=""
+        data-width="300px"
+        data-height="200px"
         data-small-header="false"
         data-adapt-container-width="false"
         data-hide-cover="false"
         data-show-facepile="false"
-      >
-        <blockquote
-          cite="https://www.facebook.com/facebook"
-          className="fb-xfbml-parse-ignore"
-        >
-          <a href="https://www.facebook.com/facebook">Facebook</a>
-        </blockquote>
-      </div>
+      ></div>
     </article>
   );
 };
