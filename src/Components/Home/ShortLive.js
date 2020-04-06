@@ -2,7 +2,7 @@ import React from 'react';
 //images
 import liveImg from '../../Images/Home/liveImg.jpg';
 import liveIcon from '../../Images/Home/liveIcon.png';
-const Live = () => {
+const Live = (props) => {
 	return (
 		<section className="shortlive">
 			<section className="shortlive__content">

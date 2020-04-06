@@ -1,41 +1,61 @@
-import React, { useState } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, lazy, Suspense } from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 //Components
-import Navbar from "./Components/Navbar/Index";
-import Home from "./Components/Home/index";
-import Footer from "./Components/Footer/index";
-import About from "./Components/About/Index";
-import Events from "./Components/AllEvents/Index";
-import Live from "./Components/Live/index";
-import EventInstance from "./Components/EventInstance/index";
+import Navbar from './Components/Navbar/index';
+import Footer from './Components/Footer/index';
+import Loader from './Components/Loader';
+//lazy Components
+const Home = lazy(() => import('./Components/Home/index'));
+const About = lazy(() => import('./Components/About/index'));
+const AllEvents = lazy(() => import('./Components/AllEvents/index'));
+const Live = lazy(() => import('./Components/Live/index'));
+const EventInstance = lazy(() => import('./Components/EventInstance/index'));
+const Contact = lazy(() => import('./Components/Contact/index'));
 
 const App = () => {
-  const [activePage, setActivePage] = useState("HOME");
-  return (
-    <React.Fragment>
-      <Router>
-        <Navbar activePage={activePage} />
-        <Switch>
-          <Route exact path="/">
-            <Home setActivePage={setActivePage} />
-          </Route>
-          <Route path="/about">
-            <About setActivePage={setActivePage} />
-          </Route>
-          <Route path="/events">
-            <Events setActivePage={setActivePage} />
-          </Route>
-          <Route path="/live">
-            <Live setActivePage={setActivePage} />
-          </Route>
-          <Route path="/instance">
-            <EventInstance setActivePage={setActivePage} />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
-    </React.Fragment>
-  );
+	const [ activePage, setActivePage ] = useState('HOME');
+	const [ isLoading, setIsLoading ] = useState(false);
+	return (
+		<React.Fragment>
+			<Router>
+				{/* <Loader /> */}
+				<Navbar activePage={activePage} setIsLoading={setIsLoading} />
+				<Switch>
+					<Route exact path="/">
+						<Suspense fallback={<Loader />}>
+							<Home setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>
+					</Route>
+					<Route path="/about">
+						<Suspense fallback={<Loader />}>
+							<About setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>
+					</Route>
+					<Route path="/events">
+						<Suspense fallback={<Loader />}>
+							<AllEvents setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>
+					</Route>
+					<Route path="/live">
+						<Suspense fallback={<Loader />}>
+							<Live setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>
+					</Route>
+					<Route path="/instance">
+						<Suspense fallback={<Loader />}>
+							<EventInstance setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>{' '}
+					</Route>
+					<Route path="/contact">
+						<Suspense fallback={<Loader />}>
+							<Contact setActivePage={setActivePage} setIsLoading={setIsLoading} />
+						</Suspense>{' '}
+					</Route>
+				</Switch>
+				<Footer />
+			</Router>
+		</React.Fragment>
+	);
 };
 
 export default App;

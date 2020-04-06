@@ -95,7 +95,7 @@
   height: 80px;
   margin: 0 auto;
   color: #00354d;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav img {
@@ -609,9 +609,9 @@
   border-radius: 5px;
   border-color: transparent;
   overflow: hidden;
-  -webkit-box-shadow: 13px 17px 21px -17px rgba(0, 0, 0, 0.49);
-          box-shadow: 13px 17px 21px -17px rgba(0, 0, 0, 0.49);
-  border: 1px solid rgba(0, 0, 0, 0.219);
+  -webkit-box-shadow: 13px 17px 15px -10px rgba(0, 0, 0, 0.068);
+          box-shadow: 13px 17px 15px -10px rgba(0, 0, 0, 0.068);
+  border: 1px solid rgba(0, 0, 0, 0.089);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -767,13 +767,9 @@
   margin-bottom: 50px;
 }
 
-.live__vid .fb-page {
+.live__vid div {
   height: 200px;
-  width: 60%;
-}
-
-.live__vid .fb-page blockquote {
-  width: 500px;
+  width: 300px;
 }
 
 .live__text h2 {
@@ -819,7 +815,7 @@
 }
 
 .live__collection {
-  background-color: rgba(0, 87, 128, 0.144);
+  background-color: rgba(0, 87, 128, 0.048);
   margin: 0 auto;
   text-align: center;
   padding: 100px 0;
@@ -928,6 +924,169 @@
 .content__text a img {
   height: 30px;
   margin-left: 10px;
+}
+
+.contact__content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 100px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 650px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact__content form {
+  z-index: 999;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  padding: 30px 30px;
+  -webkit-box-shadow: 13px 17px 15px -10px rgba(0, 0, 0, 0.068);
+          box-shadow: 13px 17px 15px -10px rgba(0, 0, 0, 0.068);
+  margin-top: 7%;
+  margin-right: -20px;
+  height: 70%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contact__content form input,
+.contact__content form textarea {
+  margin-bottom: 15px;
+  color: black;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact__content form textarea {
+  height: 200px;
+  resize: none;
+}
+
+.contact__content form label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.contact__content form div {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact__content form div article {
+  width: 48%;
+}
+
+.contact__content form button {
+  padding: 5px;
+  border-radius: 5px;
+  width: 60px;
+  border: 1px solid #2a73af;
+  color: white;
+  background-color: #2a73af;
+}
+
+.contact__content form button:hover {
+  color: #2a73af;
+  background-color: white;
+}
+
+.contact__content section {
+  border-radius: 5px;
+  height: 100%;
+  width: 60%;
+  background-color: #c0e4f0;
+  overflow: hidden;
+}
+
+.contact__content section .content {
+  margin-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0;
+  width: 80%;
+}
+
+.contact__content section h2 {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.contact__content section p {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+}
+
+.contact__content section ul {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__content section ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__content section ul li img {
+  margin-right: 15px;
+  height: 25px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 99vh;
+  width: 99vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  z-index: 99999;
 }
 
 * {

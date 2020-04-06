@@ -3,6 +3,7 @@ import React from "react";
 import fillerImg from "../../Images/AllEvents/filler-img.jpg";
 //components
 import EventCard from "../EventCard";
+
 const List = () => {
   const eventList = [];
   //filler data for events

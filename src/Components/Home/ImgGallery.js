@@ -7,8 +7,8 @@ import churchImg1 from '../../Images/Home/gallery (1).jpg';
 import churchImg2 from '../../Images/Home/gallery (2).jpg';
 import churchImg3 from '../../Images/Home/gallery (3).jpg';
 
-const ImgGallery = () => {
-	const images = [ { original: churchImg1 }, { original: churchImg2 }, { original: churchImg3 } ];
+const ImgGallery = (props) => {
+	const images = [ { original: churchImg1 }, { original: churchImg2 }, { original: churchImg3} ];
 	return (
 		<section className="imageGallery">
 			<ImageGallery
