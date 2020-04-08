@@ -31,10 +31,21 @@
 	z-index: 9999999;
 	text-align: center;
 	color: white;
+	@include for-phone-only {
+		text-align: start;
+		width: 85%;
+	}
+	@include tablet {
+		width: 95%;
+	}
 	h2 {
 		font-size: 35px;
 		margin-bottom: 40px;
 		text-align: center;
+		@include for-phone-only {
+			text-align: start;
+			font-size: 25px;
+		}
 	}
 	p {
 		font-size: 18px;
@@ -42,6 +53,16 @@
 		letter-spacing: 0.5px;
 		width: 80%;
 		margin: 0 auto;
+		@include for-phone-only {
+			text-align: justify;
+			line-height: 25px;
+			width: 100%;
+			font-size: 14px;
+			letter-spacing: 0.2px;
+		}
+		@include tablet {
+			width: 95%;
+		}
 	}
 	button {
 		color: white;

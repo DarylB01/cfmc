@@ -4,15 +4,23 @@
   text-align: center;
   width: 80%;
   max-width: 1200px;
+  &.content {
+    @include tablet {
+      width: 90%;
+    }
+  }
   h3 {
     font-size: 30px;
     margin-bottom: 20px;
+    @include for-phone-only {
+      font-size: 25px;
+    }
   }
+
   p {
     font-size: 20px;
-  }
-  a {
-    color: $l-blue;
-    border-color: $l-blue;
+    @include for-phone-only {
+      font-size: 16px;
+    }
   }
 }

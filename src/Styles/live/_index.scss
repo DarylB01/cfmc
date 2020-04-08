@@ -8,8 +8,17 @@
 	width: 80%;
 	max-width: 1200px;
 	margin: 100px auto 50px;
+	@include tablet {
+		height: 100%;
+		flex-direction: column;
+		width: 90%;
+		margin: 50px auto;
+	}
 	article {
 		width: 48%;
+		@include tablet {
+			width: 100%;
+		}
 	}
 }
 
@@ -23,6 +32,12 @@
 		height: 60%;
 		width: 100%;
 		margin-bottom: 50px;
+		@include tablet {
+			height: 400px;
+		}
+		@include for-phone-only {
+			height: 270px;
+		}
 	}
 	div {
 		height: 200px;
@@ -35,12 +50,18 @@
 		font-size: 35px;
 		color: $d-blue;
 		margin-bottom: 20px;
+		@include for-phone-only {
+			font-size: 22px;
+		}
 	}
 	p {
 		font-size: 18px;
 		letter-spacing: 0.7px;
 		line-height: 25px;
 		margin-bottom: 30px;
+		@include for-phone-only {
+			font-size: 14px;
+		}
 	}
 	h4 {
 		font-size: 20px;
@@ -52,6 +73,9 @@
 			padding: 5px;
 			border-radius: 5px;
 			border: 1px solid darkgray;
+			@include for-phone-only {
+				width: 70%;
+			}
 		}
 		.button {
 			margin-left: 10px;
@@ -80,11 +104,17 @@
 .collection__title {
 	font-size: 35px;
 	margin-bottom: 10px;
+	@include for-phone-only {
+		font-size: 25px;
+	}
 }
 
 .collection__subhead {
 	font-size: 22px;
 	color: rgb(112, 110, 110);
+	@include for-phone-only {
+		font-size: 18px;
+	}
 }
 
 .collection__list {
@@ -93,4 +123,7 @@
 	max-width: 1200px;
 	display: flex;
 	flex-wrap: wrap;
+	@include tablet {
+		width: 90%;
+	}
 }

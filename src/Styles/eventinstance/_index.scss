@@ -4,11 +4,23 @@
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
+  @include tablet {
+    margin: 50px auto;
+    width: 90%;
+    flex-direction: column;
+  }
 }
 
 .content__info {
   width: 25%;
   height: 300px;
+  @include tablet {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
   .item {
     margin-bottom: 40px;
     display: flex;
@@ -16,16 +28,26 @@
     img {
       height: 40px;
       margin-right: 20px;
+      @include for-phone-only {
+        margin-right: 10px;
+        height: 25px;
+      }
     }
     div {
       display: flex;
       flex-direction: column;
       font-size: 16px;
       color: gray;
+      @include for-phone-only {
+        font-size: 14px;
+      }
       h4 {
         margin-bottom: 5px;
         font-size: 22px;
         color: $l-blue;
+        @include for-phone-only {
+          font-size: 15px;
+        }
       }
     }
   }
@@ -33,15 +55,26 @@
 
 .content__text {
   width: 70%;
+  @include tablet {
+    margin-top: 40px;
+    width: 100%;
+  }
   h2 {
     font-size: 35px;
     margin-bottom: 30px;
     color: $d-blue;
+    @include for-phone-only {
+      font-size: 25px;
+    }
   }
   p {
     font-size: 18px;
     line-height: 30px;
     letter-spacing: 0.6px;
+    @include for-phone-only {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
   a {
     color: $l-blue;

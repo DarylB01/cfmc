@@ -3,6 +3,9 @@
 	padding: 50px 0;
 	background-color: rgba(36, 35, 35, 0.897);
 	position: relative;
+	@include for-phone-only {
+		padding: 20px 0 50px;
+	}
 }
 .footer__img {
 	width: 100%;
@@ -22,25 +25,53 @@
 	justify-content: space-between;
 	color: white;
 	font-size: 16px;
+	@include for-phone-only {
+		width: 95%;
+		flex-wrap: wrap;
+	}
+	@include tablet {
+		width: 95%;
+	}
 	section {
+		@include for-phone-only {
+			margin-top: 40px;
+		}
 		h3 {
 			font-size: 24px;
 			margin-bottom: 25px;
+			@include for-phone-only {
+				font-size: 20px;
+			}
 		}
 	}
 }
 
 .footer__newsletter {
 	width: 35%;
+	@include for-phone-only {
+		width: 100%;
+	}
 	.input__button {
 		width: 80%;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		@include tablet {
+			flex-wrap: wrap;
+		}
+		@include for-phone-only {
+			flex-wrap: nowrap;
+		}
 		.email {
 			width: 70%;
 			border: none;
 			border-radius: 5px;
 			padding: 5px;
+			@include tablet {
+				height: 20px;
+				padding: 2px 5px;
+				width: 100%;
+			}
 		}
 		.button {
 			cursor: pointer;
@@ -50,6 +81,13 @@
 			background-color: $l-blue;
 			color: white;
 			transition: 0.25s;
+			@include tablet {
+				margin-top: 20px;
+			}
+			@include for-phone-only {
+				margin: 0;
+				margin-left: 10px;
+			}
 			&:hover {
 				color: $l-blue;
 				background-color: white;
@@ -58,6 +96,9 @@
 	}
 }
 .footer__contact {
+	@include for-phone-only {
+		width: 68%;
+	}
 	ul {
 		li {
 			display: flex;
@@ -73,6 +114,9 @@
 }
 
 .footer__links {
+	@include for-phone-only {
+		width: 30%;
+	}
 	ul {
 		li {
 			display: flex;
@@ -82,5 +126,14 @@
 				color: white;
 			}
 		}
+	}
+}
+
+.footer__schedule {
+	@include tablet {
+		width: 20%;
+	}
+	@include for-phone-only {
+		width: 100%;
 	}
 }

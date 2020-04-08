@@ -34,11 +34,29 @@
 	justify-content: space-between;
 	max-width: 1200px;
 	height: 500px;
+	@include tablet {
+		width: 85%;
+		flex-direction: column;
+		margin: 150px auto;
+	}
+	@include for-phone-only {
+		margin-top: 50px;
+		align-items: center;
+		width: 95%;
+		flex-direction: column;
+	}
 	.react-reveal {
 		width: 50%;
+		@include tablet {
+			width: 100%;
+			margin: 0 auto;
+		}
 	}
 	.imageGallery {
 		width: 100%;
+		@include for-phone-only {
+			margin-top: 50px;
+		}
 		.image-gallery {
 			width: 100%;
 			.image-gallery-slide img {
@@ -46,20 +64,34 @@
 			}
 		}
 	}
-	.text {
+	.home__text {
 		display: block;
 		width: 44%;
 		color: white;
+		@include tablet {
+			margin-top: 5%;
+			width: 100%;
+			text-align: center;
+		}
+
 		h2 {
 			font-size: 50px;
 			font-weight: bold;
 			letter-spacing: 1px;
+			@include for-phone-only {
+				font-size: 30px;
+			}
 		}
 		p {
 			margin-top: 10px;
 			line-height: 35px;
 			letter-spacing: 1px;
 			font-size: 18px;
+			@include for-phone-only {
+				margin-top: 20px;
+				font-size: 14px;
+				line-height: 25px;
+			}
 		}
 	}
 }

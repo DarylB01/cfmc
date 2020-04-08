@@ -40,6 +40,9 @@ button {
 	padding: 5px 10px;
 	border-radius: 10px;
 	transition: 0.25s;
+	@include for-phone-only {
+		font-size: 15px;
+	}
 	&:hover {
 		letter-spacing: 0.5px;
 		margin-left: 20px;
@@ -54,9 +57,15 @@ html {
 }
 h2 {
 	font-weight: bold;
+	@include for-phone-only {
+		font-size: 25px;
+	}
 }
 #root,
 body {
 	width: 99vw;
 	overflow-x: hidden;
+	@include tablet {
+		width: 100vw;
+	}
 }

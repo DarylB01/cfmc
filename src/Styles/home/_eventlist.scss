@@ -7,8 +7,11 @@
 }
 .events__content {
   width: 80%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
+  @include tablet {
+    width: 95%;
+  }
   button {
     margin-top: 40px;
     color: $l-blue;
@@ -25,12 +28,24 @@
   font-size: 35px;
   margin-bottom: 50px;
   color: $d-blue;
+  @include for-phone-only {
+    font-size: 25px;
+  }
 }
 
 .events__list {
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
   justify-content: space-between;
+  .event__card {
+    .text {
+      div {
+        margin-top: -10px;
+        button {
+          padding: 0;
+        }
+      }
+    }
+  }
 }
-
-

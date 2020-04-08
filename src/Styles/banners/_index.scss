@@ -21,23 +21,36 @@
 }
 .banner__text {
 	z-index: 999;
-    width: 80%;
-    max-width: 1000px;
+	width: 80%;
+	max-width: 1000px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	color: white;
+	@include tablet {
+		width: 90%;
+	}
 	h2 {
 		font-size: 60px;
 		font-weight: 700;
 		margin-bottom: 30px;
+		@include for-phone-only {
+			font-size: 35px;
+		}
 	}
 	p {
 		width: 60%;
 		font-size: 18px;
 		line-height: 22px;
 		letter-spacing: 1px;
+		@include for-phone-only {
+			width: 100%;
+			font-size: 16px;
+		}
+		@include tablet {
+			width: 100%;
+		}
 	}
 	button {
 		border: 1px solid white;

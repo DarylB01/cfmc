@@ -1,17 +1,27 @@
 @import "./item";
 
 .about__content {
-	width: 100%;
-	margin: 150px 0px;
-	:nth-child(even) {
+    width: 100%;
+    margin: 150px 0px;
+    :nth-child(even) {
         flex-direction: row-reverse;
+        @include for-phone-only {
+            flex-direction: column;
+        }
         .picture {
             margin-left: -40px;
-            margin-right: 0px;;
+            margin-right: 0px;
+            @include for-phone-only {
+                margin: 0;
+            }
         }
         .text {
-            background-color: $l-gray;;
+            background-color: $l-gray;
         }
     }
-
+    .about__item {
+        .text {
+            flex-direction: column;
+        }
+    }
 }

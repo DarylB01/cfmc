@@ -1,11 +1,12 @@
 import React from "react";
+import DelayLink from "react-delay-link";
 //img list
 import emailImg from "../../Images/Footer/email.png";
 import locationImg from "../../Images/Footer/location.png";
 import phoneImg from "../../Images/Footer/phone.png";
 import footerBg from "../../Images/Footer/footer-bg.jpg";
 
-const index = () => {
+const index = (props) => {
   //to be used for the contacts
   const contactItems = [
     { content: "325 Holy Road", imgSrc: locationImg },
@@ -13,7 +14,7 @@ const index = () => {
     { content: "(403)-512-6128", imgSrc: phoneImg },
   ];
   //To be looped through the links
-  const linkItems = ["ABOUT", "EVENTS", "GALLERY", "CONTACT"];
+  const linkItems = ["ABOUT", "EVENTS", "LIVE", "CONTACT"];
   return (
     <footer className="footer">
       <section
@@ -21,7 +22,7 @@ const index = () => {
         style={{ backgroundImage: `url(${footerBg})` }}
       />
       <section className="footer__content">
-        {/* Newsletter Signup */}
+        {/* Newsletter Signup  (Hooked up to mailchimp)*/}
 
         <section className="footer__newsletter">
           <h3>Newsletter</h3>
@@ -78,12 +79,24 @@ const index = () => {
             {linkItems.map((item, index) => {
               return (
                 <li key={index}>
-                  <a href="">{item}</a>
+                  <DelayLink
+                    to={item.toLowerCase()}
+                    delay={200}
+                    clickAction={() => {
+                      if (props.activePage !== item) {
+                        props.setIsLoading(true);
+                      }
+                    }}
+                  >
+                    <a href="">{item}</a>
+                  </DelayLink>
                 </li>
               );
             })}
           </ul>
         </section>
+
+        {/* Schedule for mass */}
         <section className="footer__schedule">
           <h3>Schedule</h3>
           <time>Sundays 1:30 p.m. to 3:30 p.m.</time>

@@ -12,8 +12,6 @@ const transitionStyles = {
   exited: { opacity: 0 },
 };
 
-const duration = 100;
-
 const defaultStyle = {
   transition: `opacity 0.2s`,
   opacity: 0,
@@ -33,7 +31,6 @@ const Loader = (props) => {
       root.style.overflow = null;
     }
   }, [props.isLoading]);
-
   return (
     <Transition in={props.isLoading} timeout={100} unmountOnExit={false}>
       {(state) => (

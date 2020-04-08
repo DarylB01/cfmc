@@ -21,8 +21,8 @@ const Index = (props) => {
         content={<p>Contact our church ministry to learn more</p>}
       />
       <section className="contact__content">
-        <form>
-          <div>
+        <form action="https://formspree.io/mgelywer" method="POST">
+          <div className="name-email-input">
             <article>
               <label for="name">Name</label>
               <input required name="name" type="text" />

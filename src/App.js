@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+
 //Static Components
 import Navbar from "./Components/Navbar/index";
 import Footer from "./Components/Footer/index";
@@ -12,6 +13,8 @@ import AllEvents from "./Components/AllEvents/index";
 import Live from "./Components/Live/index";
 import EventInstance from "./Components/EventInstance/index";
 import Contact from "./Components/Contact/index";
+//body scroll lock module
+import disableScroll from "disable-scroll";
 
 const App = () => {
   const componentsArray = [
@@ -27,6 +30,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [prevPos1, setPrevPos] = useState(0);
   const [currPos1, setCurrPos] = useState(0);
+  const [navToggle, setNavToggle] = useState(false);
   //state functions
   const setDelayIsLoading = (val) => {
     setTimeout(() => {
@@ -44,6 +48,15 @@ const App = () => {
     setIsLoading(true);
   }, []);
 
+  useEffect(() => {
+    //disable scroll when mobile menu is toggled
+    if (navToggle) {
+      disableScroll.on();
+    } else {
+      disableScroll.off();
+    }
+  }, [navToggle]);
+
   return (
     <React.Fragment>
       <Router>
@@ -54,6 +67,8 @@ const App = () => {
           activePage={activePage}
           isLoading={isLoading}
           setIsLoading={setIsLoading}
+          setNavToggle={setNavToggle}
+          navToggle={navToggle}
         />
         <Switch>
           {componentsArray.map((item) => {
@@ -70,8 +85,7 @@ const App = () => {
             );
           })}
         </Switch>
-
-        <Footer />
+        <Footer setIsLoading={setIsLoading} activePage={activePage} />
       </Router>
     </React.Fragment>
   );

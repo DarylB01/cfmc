@@ -25,7 +25,7 @@ const Index = (props) => {
             <ImgGallery />
           </Fade>
           <Fade right>
-            <section className="text">
+            <section className="home__text">
               <h2>A Caring Church for changing times.</h2>
               <p>
                 Occaecat dolore veniam velit ut ullamco exercitation aliquip ut
