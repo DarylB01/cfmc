@@ -1,10 +1,11 @@
 import React from "react";
+import DelayLink from "react-delay-link";
 //images
 import fillerImg from "../../Images/AllEvents/filler-img.jpg";
 //components
 import EventCard from "../EventCard";
 
-const List = () => {
+const List = (props) => {
   const eventList = [];
   //filler data for events
   for (let i = 0; i < 10; i++) {
@@ -14,9 +15,17 @@ const List = () => {
       desc: "Veniam reprehenderit.",
       previewImg: fillerImg,
       redirect: (
-        <a href="" className="button-link">
-          Read More
-        </a>
+        <DelayLink
+          to="/instance"
+          delay={200}
+          clickAction={() => {
+            props.setIsLoading(true);
+          }}
+        >
+          <button href="" className="button-link">
+            Read More
+          </button>
+        </DelayLink>
       ),
     });
   }

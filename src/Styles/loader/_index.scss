@@ -2,11 +2,11 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 99vh;
+	height: 100vh;
 	width: 99vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: white;
-	z-index: 99999;
+	overflow: hidden;
 }

@@ -1,61 +1,80 @@
-import React, { useState, lazy, Suspense } from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-//Components
-import Navbar from './Components/Navbar/index';
-import Footer from './Components/Footer/index';
-import Loader from './Components/Loader';
-//lazy Components
-const Home = lazy(() => import('./Components/Home/index'));
-const About = lazy(() => import('./Components/About/index'));
-const AllEvents = lazy(() => import('./Components/AllEvents/index'));
-const Live = lazy(() => import('./Components/Live/index'));
-const EventInstance = lazy(() => import('./Components/EventInstance/index'));
-const Contact = lazy(() => import('./Components/Contact/index'));
+import React, { useState, useEffect, useRef } from "react";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+//Static Components
+import Navbar from "./Components/Navbar/index";
+import Footer from "./Components/Footer/index";
+import Loader from "./Components/Loader";
+//Content Components
+import Home from "./Components/Home/index";
+import About from "./Components/About/index";
+import AllEvents from "./Components/AllEvents/index";
+import Live from "./Components/Live/index";
+import EventInstance from "./Components/EventInstance/index";
+import Contact from "./Components/Contact/index";
 
 const App = () => {
-	const [ activePage, setActivePage ] = useState('HOME');
-	const [ isLoading, setIsLoading ] = useState(false);
-	return (
-		<React.Fragment>
-			<Router>
-				{/* <Loader /> */}
-				<Navbar activePage={activePage} setIsLoading={setIsLoading} />
-				<Switch>
-					<Route exact path="/">
-						<Suspense fallback={<Loader />}>
-							<Home setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>
-					</Route>
-					<Route path="/about">
-						<Suspense fallback={<Loader />}>
-							<About setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>
-					</Route>
-					<Route path="/events">
-						<Suspense fallback={<Loader />}>
-							<AllEvents setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>
-					</Route>
-					<Route path="/live">
-						<Suspense fallback={<Loader />}>
-							<Live setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>
-					</Route>
-					<Route path="/instance">
-						<Suspense fallback={<Loader />}>
-							<EventInstance setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>{' '}
-					</Route>
-					<Route path="/contact">
-						<Suspense fallback={<Loader />}>
-							<Contact setActivePage={setActivePage} setIsLoading={setIsLoading} />
-						</Suspense>{' '}
-					</Route>
-				</Switch>
-				<Footer />
-			</Router>
-		</React.Fragment>
-	);
+  const componentsArray = [
+    { Comp: Home, route: "/" },
+    { Comp: About, route: "/about" },
+    { Comp: AllEvents, route: "/events" },
+    { Comp: Live, route: "/live" },
+    { Comp: EventInstance, route: "/instance" },
+    { Comp: Contact, route: "/contact" },
+  ];
+  //state
+  const [activePage, setActivePage] = useState("HOME");
+  const [isLoading, setIsLoading] = useState(false);
+  const [prevPos1, setPrevPos] = useState(0);
+  const [currPos1, setCurrPos] = useState(0);
+  //state functions
+  const setDelayIsLoading = (val) => {
+    setTimeout(() => {
+      setIsLoading(val);
+    }, 1500);
+  };
+  //track scrolling value to hide nav
+  useScrollPosition(({ prevPos, currPos }) => {
+    setPrevPos(prevPos.y);
+    setCurrPos(currPos.y);
+  });
+  //initial mount
+  useEffect(() => {
+    //setpage to laoding
+    setIsLoading(true);
+  }, []);
+
+  return (
+    <React.Fragment>
+      <Router>
+        <Loader isLoading={isLoading} />
+        <Navbar
+          prevPos={prevPos1}
+          currPos={currPos1}
+          activePage={activePage}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
+        <Switch>
+          {componentsArray.map((item) => {
+            return (
+              <Route exact={item.route === "/" ? true : null} path={item.route}>
+                {
+                  <item.Comp
+                    setActivePage={setActivePage}
+                    setDelayIsLoading={setDelayIsLoading}
+                    setIsLoading={setIsLoading}
+                  />
+                }
+              </Route>
+            );
+          })}
+        </Switch>
+
+        <Footer />
+      </Router>
+    </React.Fragment>
+  );
 };
 
 export default App;

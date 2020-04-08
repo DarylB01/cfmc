@@ -1,11 +1,12 @@
 .nav__container {
   width: 100%;
-  background-color: white;
-  position: absolute;
+  background-color: transparent;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
   box-shadow: -3px 14px 18px -15px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
 }
 .nav {
   width: 80%;
@@ -17,6 +18,7 @@
   margin: 0 auto;
   color: $d-blue;
   font-size: 16px;
+
   img {
     height: 100%;
   }
@@ -25,6 +27,7 @@
     align-items: center;
     justify-content: space-between;
     li {
+      cursor: pointer;
       margin-left: 30px;
       &:hover {
         hr {
@@ -33,11 +36,11 @@
         }
       }
       a {
+        transition: 0s;
         color: $d-blue;
       }
       hr {
-		border-color: $d-blue;
-	
+        border-color: $d-blue;
         transition: 0.25s;
         width: 0%;
         opacity: 0;

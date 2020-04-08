@@ -60,24 +60,25 @@
   letter-spacing: 1px;
 }
 
-.banner__text a {
+.banner__text button {
   border: 1px solid white;
   color: white;
 }
 
-.banner__text a:hover {
+.banner__text button:hover {
   border-color: transparent;
 }
 
 .nav__container {
   width: 100%;
-  background-color: white;
-  position: absolute;
+  background-color: transparent;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
   -webkit-box-shadow: -3px 14px 18px -15px rgba(0, 0, 0, 0.75);
           box-shadow: -3px 14px 18px -15px rgba(0, 0, 0, 0.75);
+  z-index: 9999;
 }
 
 .nav {
@@ -115,6 +116,7 @@
 }
 
 .nav .links li {
+  cursor: pointer;
   margin-left: 30px;
 }
 
@@ -124,6 +126,8 @@
 }
 
 .nav .links li a {
+  -webkit-transition: 0s;
+  transition: 0s;
   color: #00354d;
 }
 
@@ -174,12 +178,12 @@
   line-height: 35px;
 }
 
-.shortlive__content .text a {
+.shortlive__content .text button {
   color: #2a73af;
   border: 1px solid #2a73af;
 }
 
-.shortlive__content .text a:hover {
+.shortlive__content .text button:hover {
   border-color: transparent;
 }
 
@@ -224,13 +228,13 @@
   margin: 0 auto;
 }
 
-.events__content a {
+.events__content button {
   margin-top: 40px;
   color: #2a73af;
   border: 1px solid #2a73af;
 }
 
-.events__content a:hover {
+.events__content button:hover {
   letter-spacing: 0.5px;
   margin-left: 20px;
   border-color: transparent;
@@ -305,12 +309,12 @@
   margin: 0 auto;
 }
 
-.shortabout__content a {
+.shortabout__content button {
   color: white;
   border: 1px solid white;
 }
 
-.shortabout__content a:hover {
+.shortabout__content button:hover {
   border-color: transparent;
 }
 
@@ -353,10 +357,15 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1200px;
+  height: 500px;
+}
+
+.home__content .react-reveal {
+  width: 50%;
 }
 
 .home__content .imageGallery {
-  width: 49%;
+  width: 100%;
 }
 
 .home__content .imageGallery .image-gallery {
@@ -437,14 +446,14 @@
           justify-content: space-between;
 }
 
-.footer__newsletter .input__button input {
+.footer__newsletter .input__button .email {
   width: 70%;
   border: none;
   border-radius: 5px;
   padding: 5px;
 }
 
-.footer__newsletter .input__button button {
+.footer__newsletter .input__button .button {
   cursor: pointer;
   padding: 2px 8px;
   border-radius: 5px;
@@ -455,7 +464,7 @@
   transition: 0.25s;
 }
 
-.footer__newsletter .input__button button:hover {
+.footer__newsletter .input__button .button:hover {
   color: #2a73af;
   background-color: white;
 }
@@ -635,14 +644,17 @@
           justify-content: center;
 }
 
-.event__card .preview a {
-  z-index: 999;
+.event__card .preview button {
+  z-index: 99999;
   opacity: 0;
   color: white;
   border-color: white;
+  position: absolute;
+  top: 25%;
+  left: 25%;
 }
 
-.event__card .preview a:hover {
+.event__card .preview button:hover {
   border-color: transparent;
 }
 
@@ -662,13 +674,14 @@
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 0;
 }
 
 .event__card .preview:hover .filter {
   opacity: 0.5;
 }
 
-.event__card .preview:hover a {
+.event__card .preview:hover button {
   opacity: 1;
 }
 
@@ -790,14 +803,14 @@
   margin-bottom: 10px;
 }
 
-.live__text .newsletter input {
+.live__text form .email {
   width: 50%;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid darkgray;
 }
 
-.live__text .newsletter button {
+.live__text form .button {
   margin-left: 10px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -809,7 +822,7 @@
   cursor: pointer;
 }
 
-.live__text .newsletter button:hover {
+.live__text form .button:hover {
   color: #2a73af;
   background-color: white;
 }
@@ -1074,7 +1087,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 99vh;
+  height: 100vh;
   width: 99vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1086,7 +1099,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: white;
-  z-index: 99999;
+  overflow: hidden;
 }
 
 * {
@@ -1098,6 +1111,11 @@
   font-family: "Roboto", sans-serif;
   -webkit-transition: 0.25s;
   transition: 0.25s;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .content {

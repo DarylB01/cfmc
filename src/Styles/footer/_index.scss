@@ -31,18 +31,18 @@
 }
 
 .footer__newsletter {
-	width:35%;
+	width: 35%;
 	.input__button {
 		width: 80%;
 		display: flex;
 		justify-content: space-between;
-		input {
+		.email {
 			width: 70%;
 			border: none;
 			border-radius: 5px;
 			padding: 5px;
 		}
-		button {
+		.button {
 			cursor: pointer;
 			padding: 2px 8px;
 			border-radius: 5px;
@@ -55,7 +55,7 @@
 				background-color: white;
 			}
 		}
-	};
+	}
 }
 .footer__contact {
 	ul {
