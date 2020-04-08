@@ -51,15 +51,15 @@ const Index = (props) => {
             </p>
             <ul className="contactInfo">
               <li>
-                <img src={emailImg} />
+                <img src={emailImg} alt="email icon" />
                 <div>cfmc@gmail.com</div>
               </li>
               <li>
-                <img src={phoneImg} />
+                <img src={phoneImg} alt="phone icon"/>
                 <div>(403) 912-2192</div>
               </li>
               <li>
-                <img src={locationImg} />
+                <img src={locationImg} alt="location icon"/>
                 <div>912 Holy Road NE, Calgary, AB</div>
               </li>
             </ul>

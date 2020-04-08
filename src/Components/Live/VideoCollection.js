@@ -13,11 +13,7 @@ export const VideoCollection = () => {
       date: "Jan 05, 2021",
       previewImg: fillerPreview,
       desc: "Consequat voluptate labore.",
-      redirect: (
-        <a className="imglink" href="">
-          <img src={playButton}></img>
-        </a>
-      ),
+      redirect: "",
     });
   }
   return (

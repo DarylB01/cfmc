@@ -33,12 +33,17 @@ const index = (props) => {
       <section className="events__content">
         <Fade left>
           <h2 className="events__header">UPCOMING EVENTS</h2>
-
-          <section className="events__list">
-            {eventsArray.map((item, index) => {
-              return <EventCard key={`even${index}`} {...item} />;
-            })}
-          </section>
+        </Fade>
+        <section className="events__list">
+          {eventsArray.map((item, index) => {
+            return (
+              <Fade left>
+                <EventCard key={`even${index}`} {...item} />
+              </Fade>
+            );
+          })}
+        </section>
+        <Fade left>
           <DelayLink
             to="/events"
             delay={200}
