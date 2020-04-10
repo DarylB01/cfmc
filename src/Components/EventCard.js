@@ -13,7 +13,6 @@ const EventCard = (props) => {
         <h3>{props.title}</h3>
         <date>{props.date}</date>
         <p>{props.desc}</p>
-        {props.redirect}
       </div>
     </article>
   );
