@@ -7,7 +7,7 @@ import aboutBg from "../../Images/Home/about-bg.jpg";
 const ShortAbout = (props) => {
   return (
     <section className="shortabout">
-      <Fade left>
+      <Fade  duration={200} left>
         <section className="shortabout__content">
           <h2>WHO WE ARE</h2>
           <p>

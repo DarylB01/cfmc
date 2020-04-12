@@ -19,8 +19,7 @@ let fetchData = {
 	fetchOne: async (id) => {
 		let data = await client.getEntry(id);
 		try {
-			console.log(data);
-			return data;
+			return data.fields;
 		} catch (err) {
 			console.log(err);
 		}

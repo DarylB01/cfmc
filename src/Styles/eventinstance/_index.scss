@@ -1,9 +1,14 @@
+.event__instance {
+  height: 100%;
+}
+
 .event__instance__content {
   margin: 150px auto;
   width: 80%;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
+  height: 100%;
   @include tablet {
     margin: 50px auto;
     width: 90%;
@@ -54,6 +59,7 @@
 }
 
 .content__text {
+  height: 100%;
   width: 70%;
   @include tablet {
     margin-top: 40px;
@@ -74,6 +80,11 @@
     @include for-phone-only {
       font-size: 14px;
       line-height: 24px;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      width:0px;
     }
   }
   a {

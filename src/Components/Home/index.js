@@ -11,9 +11,9 @@ import ShortAbout from "./ShortAbout";
 
 const Index = (props) => {
   useEffect(() => {
-    window.scrollTo(0, 0);
     props.setActivePage("HOME");
     props.setDelayIsLoading(false);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <React.Fragment>
@@ -21,7 +21,7 @@ const Index = (props) => {
         <section className="bgfilter" />
         <img className="bg" alt="bible" src={churchImg} />
         <section className="home__content">
-          <Fade left>
+          <Fade left duration={200}>
             <ImgGallery />
           </Fade>
           <Fade right>

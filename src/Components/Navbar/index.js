@@ -73,7 +73,7 @@ const Index = (props) => {
                   <DelayLink
                     delay={200}
                     replace={false}
-                    to={item === "HOME" ? "/" : item.toLowerCase()}
+                    to={item === "HOME" ? "/" : "/" + item.toLowerCase()}
                     clickAction={() => {
                       props.setNavToggle(false);
                       if (props.activePage !== item) {
