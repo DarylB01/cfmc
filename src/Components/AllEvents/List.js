@@ -5,19 +5,20 @@ import fillerImg from '../../Images/AllEvents/filler-img.jpg';
 //components
 import EventCard from '../EventCard';
 //compontent for retrieving data
-import fetchData from './fetchData';
+import fetchData from '../fetchData';
 
 const List = (props) => {
 	//state
 	const [ data, setData ] = useState([]);
 	//get data for events
 	const getResponse = async () => {
-		let contentfulData = await fetchData();
+		let contentfulData = await fetchData.fetchAll();
 		try {
 			console.log(contentfulData);
 			let dataArray = [];
 			contentfulData.forEach((element) => {
 				dataArray.push({
+					setIsLoading: props.setIsLoading,
 					title: element.fields.title,
 					desc: element.fields.subHeading,
 					date: element.fields.dateOfEvent,

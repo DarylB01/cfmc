@@ -1,137 +1,137 @@
 .nav__container {
-  width: 100%;
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  box-shadow: -3px 14px 18px -15px rgba(0, 0, 0, 0.75);
-  z-index: 9999;
-  &.-hide {
-    top: -80px;
-  }
+	width: 100%;
+	background-color: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	box-shadow: -3px 14px 18px -15px rgba(0, 0, 0, 0.75);
+	z-index: 9999;
+	&.-hide {
+		top: -80px;
+	}
 }
 .nav {
-  width: 80%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  margin: 0 auto;
-  color: $d-blue;
-  font-size: 16px;
-  @include for-phone-only {
-    width: 99%;
-    height: 60px;
-  }
-  @include tablet {
-    width: 100%;
-  }
-  div {
-    cursor: pointer;
-    height: 100%;
-    @include for-phone-only {
-      height: 90%;
-    }
-    img {
-      height: 100%;
-    }
-  }
+	width: 80%;
+	max-width: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	margin: 0 auto;
+	color: $d-blue;
+	font-size: 16px;
+	@include for-phone-only {
+		width: 99%;
+		height: 60px;
+	}
+	@include tablet {
+		width: 100%;
+	}
+	div {
+		cursor: pointer;
+		height: 100%;
+		@include for-phone-only {
+			height: 90%;
+		}
+		img {
+			height: 100%;
+		}
+	}
 }
 
 .nav__links-and-clickout {
-  @include for-phone-only {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -100vw;
-  }
-  .clickout {
-    display: none;
-    @include for-phone-only {
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-      display: block;
-      height: 100%;
-      width: 30%;
-      &:active {
-        outline: none;
-      }
-    }
-  }
+	@include for-phone-only {
+		display: flex;
+		flex-direction: row-reverse;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: -100vw;
+	}
+	.clickout {
+		display: none;
+		@include for-phone-only {
+			user-select: none;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			display: block;
+			height: 100%;
+			width: 30%;
+			&:active {
+				outline: none;
+			}
+		}
+	}
 }
 
 .nav__links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include tablet {
-    margin-right: 20px;
-  }
-  @include for-phone-only {
-    flex-direction: column;
-    display: flex;
-    height: 100%;
-    width: 70%;
-    justify-content: flex-start;
-    box-shadow: -2px 2px 26px -9px rgba(0, 0, 0, 0.75);
-    background-color: white;
-    margin-right: 0;
-  }
-  li {
-    transition: 0.05s;
-    cursor: pointer;
-    margin-left: 30px;
-    @include for-phone-only {
-      color: $d-blue;
-      margin-bottom: 10px;
-      font-size: 15px;
-      width: 80%;
-    }
-    &:hover {
-      hr {
-        width: 100%;
-        opacity: 1;
-      }
-    }
-    a {
-      color: $d-blue;
-    }
-    hr {
-      border-color: $d-blue;
-      transition: 0.25s;
-      width: 0%;
-      opacity: 0;
-      @include for-phone-only {
-        border: 0.5px solid $d-blue;
-      }
-    }
-  }
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include tablet {
+		margin-right: 20px;
+	}
+	@include for-phone-only {
+		flex-direction: column;
+		display: flex;
+		height: 100%;
+		width: 70%;
+		justify-content: flex-start;
+		box-shadow: -2px 2px 26px -9px rgba(0, 0, 0, 0.75);
+		background-color: white;
+		margin-right: 0;
+	}
+	li {
+		transition: 0.05s;
+		cursor: pointer;
+		margin-left: 30px;
+		@include for-phone-only {
+			color: $d-blue;
+			margin-bottom: 10px;
+			font-size: 15px;
+			width: 80%;
+		}
+		&:hover {
+			hr {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+		a {
+			color: $d-blue;
+		}
+		hr {
+			border-color: $d-blue;
+			transition: 0.25s;
+			width: 0%;
+			opacity: 0;
+			@include for-phone-only {
+				border: 0.5px solid $d-blue;
+			}
+		}
+	}
 }
 
 .mobile__menuImg {
-  display: none;
-  height: 30px;
-  margin-right: 20px;
-  @include for-phone-only {
-    display: block;
-    &.-hidden {
-      visibility: hidden;
-    }
-  }
+	display: none;
+	height: 30px;
+	margin-right: 20px;
+	@include for-phone-only {
+		display: block;
+		&.-hidden {
+			visibility: hidden;
+		}
+	}
 }
 
 .link__mobileLogo {
-  display: none;
-  @include for-phone-only {
-    display: block;
-    margin-top: 100px;
-  }
-  img {
-    height: 200px;
-  }
+	display: none;
+	@include for-phone-only {
+		display: block;
+		margin-top: 100px;
+	}
+	img {
+		height: 200px;
+	}
 }

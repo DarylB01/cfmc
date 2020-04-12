@@ -1,14 +1,7 @@
 .allevents__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 50px;
-    .event__card {
-        .button-link {
-            margin-top: 5px;
-            color: $l-blue;
-            padding: 0;
-        }
-    }
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	width: 100%;
+	margin-top: 50px;
 }

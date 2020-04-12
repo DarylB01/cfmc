@@ -40,16 +40,8 @@
   justify-content: space-between;
   .react-reveal {
     width: 24%;
-  }
-  .event__card {
-    width: 100%;
-    .text {
-      div {
-        margin-top: -10px;
-        button {
-          padding: 0;
-        }
-      }
+    article {
+      width: 100%
     }
   }
 }
