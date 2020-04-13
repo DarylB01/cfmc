@@ -15,7 +15,6 @@ import fetchData from "../fetchData";
 const Index = (props) => {
   //state
   const [data, setData] = useState("");
-  const [content, setContent] = useState("");
   useEffect(() => {
     window.scrollTo(0, 0);
     props.setActivePage("EVENTS");
@@ -33,7 +32,6 @@ const Index = (props) => {
     };
 	getData();
 	
-	console.log(content)
   }, []);
   return (
     <main className="event__instance">

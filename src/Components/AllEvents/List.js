@@ -3,7 +3,7 @@ import DelayLink from 'react-delay-link';
 //images
 import fillerImg from '../../Images/AllEvents/filler-img.jpg';
 //components
-import EventCard from '../EventCard';
+import EventCard from '../Card';
 //compontent for retrieving data
 import fetchData from '../fetchData';
 
@@ -12,7 +12,7 @@ const List = (props) => {
 	const [ data, setData ] = useState([]);
 	//get data for events
 	const getResponse = async () => {
-		let contentfulData = await fetchData.fetchAll();
+		let contentfulData = await fetchData.fetchAll('posts');
 		try {
 			console.log(contentfulData);
 			let dataArray = [];
@@ -22,11 +22,10 @@ const List = (props) => {
 					title: element.fields.title,
 					desc: element.fields.subHeading,
 					date: element.fields.dateOfEvent,
-					id: element.sys.id,
+					url: '/event/' + element.sys.id,
 					previewImg: 'https:' + element.fields.imgSrc.fields.file.url.substr(1)
 				});
 			});
-			console.log(dataArray);
 			setData(dataArray);
 		} catch (err) {
 			console.log(err);

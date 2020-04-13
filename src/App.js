@@ -13,6 +13,7 @@ import AllEvents from './Components/AllEvents/index';
 import Live from './Components/Live/index';
 import EventInstance from './Components/EventInstance/index';
 import Contact from './Components/Contact/index';
+import VideoInstance from './Components/VideoInstance';
 //body scroll lock module
 import disableScroll from 'disable-scroll';
 
@@ -90,6 +91,10 @@ const App = () => {
 							/>
 						);
 					})}
+					<Route
+						path="/video/:url"
+						render={(props) => <VideoInstance {...props} setIsLoading={setIsLoading} />}
+					/>
 				</Switch>
 				<Footer setIsLoading={setIsLoading} activePage={activePage} />
 			</Router>

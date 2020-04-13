@@ -12,12 +12,12 @@
 	transition: 0.25s;
 	&:hover {
 		box-shadow: 13px 17px 15px -10px rgba(0, 0, 0, 0.253);
-	} 
+	}
 	div[role='link'] {
 		position: relative;
 		flex-direction: column;
-    cursor: pointer;
-    height: 100%;
+		cursor: pointer;
+		height: 100%;
 		width: 100%;
 	}
 	@include tablet {
@@ -51,6 +51,14 @@
 		top: 0;
 		left: 0;
 		z-index: 0;
+	}
+}
+video {
+	object-fit: cover;
+	height: 50%;
+	width: 100%;
+	@include for-phone-only {
+		height: 70%;
 	}
 }
 .text {

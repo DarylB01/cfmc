@@ -8,12 +8,13 @@ const client = contentful.createClient({
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 
 let fetchData = {
-	fetchAll: async () => {
-		let data = await client.getEntries();
+	fetchAll: async (contentId) => {
+		let data = await client.getEntries({ content_type: contentId });
 		try {
+			console.log(data);
 			return data.items;
 		} catch (err) {
-			return data;
+			console.log(err);
 		}
 	},
 	fetchOne: async (id) => {

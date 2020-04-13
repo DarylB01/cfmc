@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import fetchData from '../fetchData';
 //images
-import fillerPreview from "../../Images/Live/preview.jpg";
-import playButton from "../../Images/Live/play-button.png";
-import EventCard from "../EventCard";
+import fillerPreview from '../../Images/Live/preview.jpg';
+import VideoCard from '../Card';
 
-export const VideoCollection = () => {
-  const fillerData = [];
-
-  for (let i = 0; i < 10; i++) {
-    fillerData.push({
-      title: "Video Title",
-      date: "Jan 05, 2021",
-      previewImg: fillerPreview,
-      desc: "Consequat voluptate labore.",
-      redirect: "",
-    });
-  }
-  return (
-    <section className="live__collection">
-      <h2 className="collection__title">Our Video Collection</h2>
-      <h4 className="collection__subhead">
-        Et et excepteur velit dolor laborum fugiat.
-      </h4>
-      <section className="collection__list">
-        {fillerData.map((vid, index) => {
-          return <EventCard {...vid} />;
-        })}
-      </section>
-    </section>
-  );
+export const VideoCollection = (props) => {
+	//state
+	const [ data, setData ] = useState('');
+	//initial mount
+	useEffect(() => {
+		getContentful();
+	}, []);
+	//get contentful data then set as state
+	const getContentful = async () => {
+		let res = await fetchData.fetchAll('videos');
+		try {
+			console.log(res);
+			let dataArray = [];
+			res.forEach((element) => {
+				dataArray.push({
+					isVideo: true,
+					setIsLoading: props.setIsLoading,
+					title: element.fields.title,
+					desc: element.fields.description,
+					date: element.fields.dateOfEvent,
+					src: 'https:' + element.fields.video.fields.file.url.substring(1),
+					url: '/video' + element.fields.video.fields.file.url.substring(1),
+					previewImg: fillerPreview
+				});
+			});
+			setData(dataArray);
+		} catch (err) {
+			console.log(err);
+		}
+	};
+	return (
+		<section className="live__collection">
+			<h2 className="collection__title">Our Video Collection</h2>
+			<h4 className="collection__subhead">Et et excepteur velit dolor laborum fugiat.</h4>
+			<section className="collection__list">
+				{data &&
+					data.map((vid, index) => {
+						return <VideoCard {...vid} />;
+					})}
+			</section>
+		</section>
+	);
 };
