@@ -41,7 +41,7 @@ const Live = (props) => {
         </Fade>
         <Fade right>
           <section className="img">
-            <img src={liveImg} />
+            <img src={liveImg} alt="video camera"/>
             <div className="filter" />
           </section>
         </Fade>

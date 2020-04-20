@@ -8,7 +8,7 @@ const EventCard = (props) => {
 		<Fade left delay={200}>
 			<article className="event__card">
 				<DelayLink
-					delay={500}
+					delay={200}
 					to={props.url}
 					clickAction={
 						props.setIsLoading ? (
@@ -19,7 +19,10 @@ const EventCard = (props) => {
 					}
 				>
 					{!props.isVideo ? (
-						<div className="preview" style={{ backgroundImage: `url(${props.previewImg})` }} />
+						<div
+							className="preview"
+							style={{ backgroundImage: `url(${props.previewImg})` }}
+						/>
 					) : (
 						<video preload="metadata">
 							<source src={props.src} />

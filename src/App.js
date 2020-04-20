@@ -6,7 +6,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Navbar from './Components/Navbar/index';
 import Footer from './Components/Footer/index';
 import Loader from './Components/Loader';
-//Content Components
+//Page Components
 import Home from './Components/Home/index';
 import About from './Components/About/index';
 import AllEvents from './Components/AllEvents/index';
@@ -23,8 +23,15 @@ const App = () => {
 		{ Comp: About, route: '/about' },
 		{ Comp: AllEvents, route: '/events' },
 		{ Comp: Live, route: '/live' },
-		{ Comp: EventInstance, route: '/event/:id' },
-		{ Comp: Contact, route: '/contact' }
+		{
+			Comp: EventInstance,
+			route: '/event/:id'
+		},
+		{ Comp: Contact, route: '/contact' },
+		{
+			Comp: VideoInstance,
+			route: '/video/:id'
+		}
 	];
 	//state
 	const [ activePage, setActivePage ] = useState('HOME');
@@ -75,9 +82,10 @@ const App = () => {
 					navToggle={navToggle}
 				/>
 				<Switch>
-					{componentsArray.map((item) => {
+					{componentsArray.map((item, index) => {
 						return (
 							<Route
+								key={`route ${index}`}
 								exact={item.route === '/' ? true : null}
 								path={item.route}
 								render={(props) => (
@@ -91,10 +99,6 @@ const App = () => {
 							/>
 						);
 					})}
-					<Route
-						path="/video/:url"
-						render={(props) => <VideoInstance {...props} setIsLoading={setIsLoading} />}
-					/>
 				</Switch>
 				<Footer setIsLoading={setIsLoading} activePage={activePage} />
 			</Router>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetchData from '../fetchData';
 //images
-import fillerPreview from '../../Images/Live/preview.jpg';
 import VideoCard from '../Card';
 
 export const VideoCollection = (props) => {
@@ -15,7 +14,6 @@ export const VideoCollection = (props) => {
 	const getContentful = async () => {
 		let res = await fetchData.fetchAll('videos');
 		try {
-			console.log(res);
 			let dataArray = [];
 			res.forEach((element) => {
 				dataArray.push({
@@ -24,11 +22,11 @@ export const VideoCollection = (props) => {
 					title: element.fields.title,
 					desc: element.fields.description,
 					date: element.fields.dateOfEvent,
-					src: 'https:' + element.fields.video.fields.file.url.substring(1),
-					url: '/video' + element.fields.video.fields.file.url.substring(1),
-					previewImg: fillerPreview
+					src: 'https:' + element.fields.video.fields.file.url,
+					url: `/video/${element.sys.id}`
 				});
 			});
+			console.log(res);
 			setData(dataArray);
 		} catch (err) {
 			console.log(err);

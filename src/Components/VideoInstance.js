@@ -1,14 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+//fetch data from api
+import fetchData from './fetchData';
 
 const VideoInstance = (props) => {
+	const [ data, setData ] = useState('');
 	useEffect(() => {
-		props.setIsLoading(false);
+		const getData = async () => {
+			let res = await fetchData.fetchOne(`${props.match.params.id}`);
+			try {
+				setData(res.video.fields.file.url);
+			} catch (err) {
+				console.log(err);
+			}
+		};
+		getData();
+		props.setDelayIsLoading(false);
 	}, []);
+
 	return (
 		<div className="videoInstance">
-			<video controls>
-				<source src={'https:' + props.location.pathname.substring(6)} />
-			</video>
+			{data && (
+				<video preload controls>
+					<source src={`https:${data}`} />
+				</video>
+			)}
 		</div>
 	);
 };

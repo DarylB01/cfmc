@@ -1900,7 +1900,7 @@ video {
 
 .videoInstance video {
   height: 480px;
-  width: 640px;
+  width: 720px;
 }
 
 @media (max-width: 750px) {

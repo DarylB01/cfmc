@@ -1,5 +1,4 @@
 import React from "react";
-import { FacebookProvider, Page } from "react-facebook";
 //components
 
 const Description = () => {

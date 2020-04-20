@@ -11,7 +11,7 @@
 	justify-content: center;
 	video {
 		height: 480px;
-		width: 640px;
+		width: 720px;
 		@include for-phone-only {
 			width: 90%;
 			height: auto;

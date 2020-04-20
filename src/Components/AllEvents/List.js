@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import DelayLink from 'react-delay-link';
+import React, {
+	useState,
+	useEffect
+} from 'react';
 //images
 import fillerImg from '../../Images/AllEvents/filler-img.jpg';
 //components
@@ -12,18 +14,28 @@ const List = (props) => {
 	const [ data, setData ] = useState([]);
 	//get data for events
 	const getResponse = async () => {
-		let contentfulData = await fetchData.fetchAll('posts');
+		let apiData = await fetchData.fetchAll(
+			'posts'
+		);
 		try {
-			console.log(contentfulData);
 			let dataArray = [];
-			contentfulData.forEach((element) => {
+			apiData.forEach((element) => {
 				dataArray.push({
-					setIsLoading: props.setIsLoading,
+					setIsLoading:
+						props.setIsLoading,
 					title: element.fields.title,
-					desc: element.fields.subHeading,
-					date: element.fields.dateOfEvent,
-					url: '/event/' + element.sys.id,
-					previewImg: 'https:' + element.fields.imgSrc.fields.file.url.substr(1)
+					desc:
+						element.fields.subHeading,
+					date:
+						element.fields
+							.dateOfEvent,
+					url:
+						'/event/' +
+						element.sys.id,
+					previewImg:
+						'https:' +
+						element.fields.imgSrc
+							.fields.file.url
 				});
 			});
 			setData(dataArray);
@@ -50,7 +62,12 @@ const List = (props) => {
 	return (
 		<section className="allevents__list">
 			{data.map((item, index) => {
-				return <EventCard key={`event${index}`} {...item} />;
+				return (
+					<EventCard
+						key={`event${index}`}
+						{...item}
+					/>
+				);
 			})}
 		</section>
 	);
