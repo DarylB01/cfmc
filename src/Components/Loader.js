@@ -32,7 +32,7 @@ const Loader = (props) => {
     }
   }, [props.isLoading]);
   return (
-    <Transition in={props.isLoading} timeout={100} unmountOnExit={false}>
+    <Transition in={props.isLoading} timeout={100} unmountOnExit={true}>
       {(state) => (
         <div
           className="loader"
