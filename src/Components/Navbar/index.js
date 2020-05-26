@@ -7,7 +7,13 @@ import mobMenuImg from "../../Images/Navbar/mob-menu-img.png";
 import cfmcMobileLogo from "../../Images/Navbar/cfmc-icon.jpg";
 
 const Index = (props) => {
-  const navItems = ["HOME", "ABOUT", "EVENTS", "LIVE", "CONTACT"];
+  const navItems = [
+    "HOME",
+    "ABOUT",
+    "EVENTS",
+    "VIDEOS",
+    "CONTACT",
+  ];
   //conditional styles for hr element
   const setStyle = (val) => {
     let style = {};
@@ -29,11 +35,18 @@ const Index = (props) => {
 
   return (
     <section
-      className={!props.navToggle ? "nav__container" : "nav__container -hide"}
+      className={
+        !props.navToggle
+          ? "nav__container"
+          : "nav__container -hide"
+      }
       style={
         props.currPos !== 0
           ? { backgroundColor: "white" }
-          : { backgroundColor: "transparent", boxShadow: "none" }
+          : {
+              backgroundColor: "transparent",
+              boxShadow: "none",
+            }
       }
     >
       <nav className="nav">
@@ -49,7 +62,9 @@ const Index = (props) => {
           <img
             alt="cfmc logo"
             className="logo"
-            src={props.currPos !== 0 ? cfmcLogo : cfmcLogoWhite}
+            src={
+              props.currPos !== 0 ? cfmcLogo : cfmcLogoWhite
+            }
           />
         </DelayLink>
         <section
@@ -65,7 +80,8 @@ const Index = (props) => {
                 <li
                   key={index}
                   style={
-                    props.currPos === 0 && props.navToggle !== true
+                    props.currPos === 0 &&
+                    props.navToggle !== true
                       ? { color: "white" }
                       : null
                   }
@@ -73,7 +89,11 @@ const Index = (props) => {
                   <DelayLink
                     delay={200}
                     replace={false}
-                    to={item === "HOME" ? "/" : "/" + item.toLowerCase()}
+                    to={
+                      item === "HOME"
+                        ? "/"
+                        : "/" + item.toLowerCase()
+                    }
                     clickAction={() => {
                       props.setNavToggle(false);
                       if (props.activePage !== item) {
@@ -98,7 +118,11 @@ const Index = (props) => {
           ></div>
         </section>
         <img
-          style={props.currPos === 0 ? { filter: "invert(100%)" } : null}
+          style={
+            props.currPos === 0
+              ? { filter: "invert(100%)" }
+              : null
+          }
           className={
             props.navToggle === true
               ? "mobile__menuImg -hidden"

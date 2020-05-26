@@ -22,7 +22,7 @@ const App = () => {
     { Comp: Home, route: "/" },
     { Comp: About, route: "/about" },
     { Comp: AllEvents, route: "/events" },
-    { Comp: Live, route: "/live" },
+    { Comp: Live, route: "/videos" },
     {
       Comp: EventInstance,
       route: "/event/:id",

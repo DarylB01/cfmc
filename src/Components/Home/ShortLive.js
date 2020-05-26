@@ -11,7 +11,7 @@ const Live = (props) => {
         <Fade left>
           <section className="text">
             <img alt="video camera" src={liveIcon} />
-            <h2>Join us on Facebook Live!</h2>
+            <h2>Check out our videos!</h2>
             <p>
               Tempor elit ut ex aute cupidatat consectetur cupidatat elit do.
               Esse consequat pariatur magna ut enim amet. Id in irure magna esse
@@ -35,7 +35,7 @@ const Live = (props) => {
                 props.setIsLoading(true);
               }}
             >
-              <button className="button-link">Join us LIVE</button>
+              <button className="button-link">Go to Videos</button>
             </DelayLink>{" "}
           </section>
         </Fade>

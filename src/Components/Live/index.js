@@ -9,7 +9,7 @@ import { VideoCollection } from './VideoCollection';
 const Index = (props) => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		props.setActivePage('LIVE');
+		props.setActivePage('VIDEOS');
 		props.setDelayIsLoading(false);
 	}, []);
 	return (
