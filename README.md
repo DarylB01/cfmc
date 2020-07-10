@@ -8,3 +8,9 @@ https://cfmc.netlify.app/#/
 
 ## Author
 Daryl Botengan
+
+## Commands
+### npm start
+  - Previews the project in development mode.
+  ### npm build
+   - Creates a production version of assets code that are deployment ready. 
