@@ -13,4 +13,4 @@ Daryl Botengan
 ### npm start
   - Previews the project in development mode.
   ### npm build
-   - Creates a production version of assets code that are deployment ready. 
+   - Creates a production version of assets that are deployment ready. 
