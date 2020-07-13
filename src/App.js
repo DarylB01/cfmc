@@ -43,7 +43,7 @@ const App = () => {
   const setDelayIsLoading = (val) => {
     setTimeout(() => {
       setIsLoading(val);
-    }, 1500);
+    }, 200);
   };
   //track scrolling value to hide nav
   useScrollPosition(({ prevPos, currPos }) => {
