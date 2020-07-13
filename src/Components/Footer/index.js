@@ -10,7 +10,7 @@ const index = (props) => {
   //to be used for the contacts
   const contactItems = [
     {
-      content: "325 Holy Road",
+      content: "636 Marlborough Way NE, Calgary",
       imgSrc: locationImg,
     },
     {

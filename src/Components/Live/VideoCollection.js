@@ -26,7 +26,6 @@ export const VideoCollection = (props) => {
           url: `/video/${element.sys.id}`,
         });
       });
-      console.log(res);
       setData(dataArray);
     } catch (err) {
       console.log(err);

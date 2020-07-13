@@ -537,7 +537,7 @@
 
 @media (max-width: 1199px) {
   .shortabout__content {
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -574,7 +574,7 @@
 
 @media (max-width: 1199px) {
   .shortabout__content p {
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -681,6 +681,15 @@
 
 .home__content .imageGallery .image-gallery .image-gallery-slide img {
   width: width 100%;
+}
+
+.home__content .image-gallery-using-mouse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home__content .home__text {

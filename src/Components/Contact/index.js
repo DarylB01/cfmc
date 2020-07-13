@@ -24,17 +24,17 @@ const Index = (props) => {
         <form action="https://formspree.io/mgelywer" method="POST">
           <div className="name-email-input">
             <article>
-              <label for="name">Name</label>
+              <label htmlFor="name">Name</label>
               <input required name="name" type="text" />
             </article>
             <article>
-              <label for="email">E-Mail Address</label>
+              <label htmlFor="email">E-Mail Address</label>
               <input required name="email" type="email" />
             </article>
           </div>
-          <label for="subject">Subject</label>
+          <label htmlFor="subject">Subject</label>
           <input required name="subject" type="text" />
-          <label for="message">Message</label>
+          <label htmlFor="message">Message</label>
           <textarea required name="message" />
           <button type="submit">Send</button>
         </form>
