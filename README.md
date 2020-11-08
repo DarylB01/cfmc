@@ -1,7 +1,7 @@
-#  Calgary Filipino Methodist Church Website
+#  Local Church Website
 
 ## Intro
-This is the Front-end code for the Calgary Filipino Methodist Church website. The rest of the content is still being worked on and I am still waiting for additional feedback from the client.
+This is the Front-end code for a local church site I've worked on
 
 ## URL
 https://cfmc.netlify.app/#/
